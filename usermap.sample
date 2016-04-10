@@ -1,0 +1,7 @@
+#user_id admin_flag allowed_indices allowed_types|document_filter_key=value
+GUEST 0 NULL NULL|NULL 
+admin 1 NULL NULL|NULL
+kibana 1 NULL NULL|NULL
+user1 0 .kibana,example-* some_type1,some_type2,other_types*|user_id=user1
+user2 0 .kibana,example-2016-04-10 *|user_id=user*,another_filter_key=another_filter_value
+user3 0 .kibana,example-* *|*

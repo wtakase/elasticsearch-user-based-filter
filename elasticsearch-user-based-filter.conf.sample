@@ -1,0 +1,5 @@
+<LocationMatch "^/es/(.*)$">
+  ProxyPassMatch http://localhost:9200/$1
+  ProxyPassReverse http://localhost:9200/$1
+  RequestHeader set X_PROXY_REMOTE_USER %{REMOTE_USER}s
+</LocationMatch>

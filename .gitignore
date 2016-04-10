@@ -1,0 +1,7 @@
+target
+usermap
+*conf
+*.txt
+*.sh
+*.swp
+*.org
