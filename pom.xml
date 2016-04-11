@@ -5,7 +5,7 @@
   <packaging>jar</packaging>
   <url>http://maven.apache.org</url>
   <properties>
-    <elasticsearch.version>2.0.1</elasticsearch.version>
+    <elasticsearch.version>2.0.0</elasticsearch.version>
     <plugin.name>user-based-filter</plugin.name>
     <plugin.description>Restricts Rest API access based on REMOTE_USER</plugin.description>
     <plugin.classname>jp.kek.elasticsearch.userbasedfilter.UserBasedFilterPlugin</plugin.classname>
