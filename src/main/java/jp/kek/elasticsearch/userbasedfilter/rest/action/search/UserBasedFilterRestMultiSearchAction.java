@@ -49,7 +49,6 @@ public class UserBasedFilterRestMultiSearchAction extends RestMultiSearchAction 
             String[] allowedIndices = UserBasedFilterUtils.getAllowedIndices(userId);
             String[] allowedTypes = UserBasedFilterUtils.getAllowedTypes(userId);
             String path = request.path();
-            boolean isTemplateRequest = isTemplateRequest(path);
             IndicesOptions indicesOptions = IndicesOptions.fromRequest(request, multiSearchRequest.indicesOptions());
 
             String[] content = request.content().toUtf8().split("\n");
@@ -87,12 +86,8 @@ public class UserBasedFilterRestMultiSearchAction extends RestMultiSearchAction 
                 logger.error("No valid content found after filtering");
                 return;
             }
-            multiSearchRequest.add(new BytesArray(filteredContent), isTemplateRequest, indices, types, request.param("search_type"), request.param("routing"), indicesOptions, allowExplicitIndex);
+            multiSearchRequest.add(new BytesArray(filteredContent), indices, types, request.param("search_type"), request.param("routing"), indicesOptions, allowExplicitIndex);
             client.multiSearch(multiSearchRequest, new RestToXContentListener<MultiSearchResponse>(channel));
         }
-    }
-
-    private boolean isTemplateRequest(String path) {
-        return (path != null && path.endsWith("/template"));
     }
 }
