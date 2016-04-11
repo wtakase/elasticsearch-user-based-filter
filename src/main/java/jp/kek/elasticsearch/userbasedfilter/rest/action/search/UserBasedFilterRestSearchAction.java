@@ -37,8 +37,7 @@ public class UserBasedFilterRestSearchAction extends RestSearchAction {
             logger.debug("Admin bypass");
             super.handleRequest(request, channel, client);
         } else {
-            SearchRequest searchRequest = new SearchRequest();
-            RestSearchAction.parseSearchRequest(searchRequest, request, parseFieldMatcher, null);
+            SearchRequest searchRequest = RestSearchAction.parseSearchRequest(request, parseFieldMatcher);
 
             String[] indices = UserBasedFilterUtils.trimIndices(request.param("index"), userId);
 
