@@ -8,7 +8,7 @@ This plugin restricts ElasticSearch API requests from Kibana based on REMOTE_USE
 
 ## Requirement
 
- * ElasticSearch = 2.0.2
+ * ElasticSearch = 2.0.1
  * Apache Maven
 
 ## Install
@@ -17,7 +17,7 @@ This plugin restricts ElasticSearch API requests from Kibana based on REMOTE_USE
 # cd elasticsearch-user-based-filter
 # mvn clean package
 # /usr/share/elasticsearch/bin/plugin remove user-based-filter
-# /usr/share/elasticsearch/bin/plugin install file://`pwd`/target/releases/user-based-filter-2.0.2.zip
+# /usr/share/elasticsearch/bin/plugin install file://`pwd`/target/releases/user-based-filter-2.0.1.zip
 # systemctl restart elasticsearch
 ```
 
